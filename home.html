@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>My Blog Posts</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div id="posts-container">Loading posts...</div>
+
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker terdaftar!'))
+                .catch(error => console.error(' Service Worker gagal:', error));
+        }
+    </script>
+</body>
+</html>
